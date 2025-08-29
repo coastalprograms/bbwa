@@ -50,11 +50,11 @@ const formSchema = z.object({
   
   // Licenses & Certifications
   whiteCardFile: z.any().optional(),
-  highRiskLicense: z.boolean().default(false),
+  highRiskLicense: z.boolean(),
   highRiskLicenseFile: z.any().optional(),
-  safeWorkTiltJobs: z.boolean().default(false),
+  safeWorkTiltJobs: z.boolean(),
   safeWorkTiltJobsFile: z.any().optional(),
-  otherLicense: z.boolean().default(false),
+  otherLicense: z.boolean(),
   otherLicenseDetails: z.string().optional(),
   otherLicenseFile: z.any().optional(),
   
@@ -124,9 +124,21 @@ export default function WorkerInductionPage() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      mobile: "",
+      allergies: "",
+      company: "",
+      position: "",
+      trade: "",
+      emergencyName: "",
+      emergencyPhone: "",
+      emergencyRelationship: "",
       highRiskLicense: false,
       safeWorkTiltJobs: false,
       otherLicense: false,
+      otherLicenseDetails: "",
       noAlcoholDrugs: false,
       electricalEquipment: false,
       hazardousSubstances: false,
