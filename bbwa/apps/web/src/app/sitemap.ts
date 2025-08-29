@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@supabase/supabase-js'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://baysidebuilderswa.com.au'
@@ -88,19 +88,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic project routes from database
   let projectRoutes: MetadataRoute.Sitemap = []
   try {
-    const supabase = await createClient()
-    const { data: projects } = await supabase
-      .from('projects')
-      .select('slug, updated_at')
-      .eq('status', 'published')
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+    
+    if (url && anonKey) {
+      const supabase = createClient(url, anonKey)
+      const { data: projects } = await supabase
+        .from('projects')
+        .select('slug, updated_at')
+        .eq('status', 'published')
 
-    if (projects) {
-      projectRoutes = projects.map((project) => ({
-        url: `${baseUrl}/projects/${project.slug}`,
-        lastModified: project.updated_at ? new Date(project.updated_at) : currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }))
+      if (projects) {
+        projectRoutes = projects.map((project) => ({
+          url: `${baseUrl}/projects/${project.slug}`,
+          lastModified: project.updated_at ? new Date(project.updated_at) : currentDate,
+          changeFrequency: 'monthly' as const,
+          priority: 0.6,
+        }))
+      }
     }
   } catch (error) {
     console.error('Error fetching projects for sitemap:', error)

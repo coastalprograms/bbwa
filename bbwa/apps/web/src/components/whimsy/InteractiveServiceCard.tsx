@@ -26,7 +26,6 @@ export default function InteractiveServiceCard({ service, index }: InteractiveSe
   const [isHovered, setIsHovered] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const cardRef = useRef<HTMLDivElement>(null)
   const [parallaxRef, parallaxPosition] = useMouseParallax(5)
 
   const getServiceIcon = () => {
@@ -42,9 +41,8 @@ export default function InteractiveServiceCard({ service, index }: InteractiveSe
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!cardRef.current) return
-    
-    const rect = cardRef.current.getBoundingClientRect()
+    const target = e.currentTarget as HTMLDivElement
+    const rect = target.getBoundingClientRect()
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20
     
@@ -59,14 +57,7 @@ export default function InteractiveServiceCard({ service, index }: InteractiveSe
   return (
     <ConstructionCursor tool={getConstructionTool()}>
       <Card 
-        ref={useCallback((el: HTMLDivElement | null) => {
-          if (cardRef) {
-            cardRef.current = el
-          }
-          if (parallaxRef) {
-            parallaxRef.current = el  
-          }
-        }, [cardRef, parallaxRef])}
+        ref={parallaxRef as React.RefObject<HTMLDivElement>}
         className={`group relative overflow-hidden cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl ${
           isHovered ? 'scale-105 -translate-y-4' : 'hover:-translate-y-2'
         }`}
