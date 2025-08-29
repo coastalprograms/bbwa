@@ -353,9 +353,11 @@ export default function LandingPage() {
           <div className="text-center mt-12">
             <ConstructionCursor tool="wrench">
               <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 border hover-perth-glow cursor-pointer transition-all duration-300 hover:scale-105">
-                <img 
+                <Image 
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png" 
                   alt="Google" 
+                  width={24}
+                  height={24}
                   className="w-6 h-6 animate-perth-sun-rays"
                 />
                 <span className="text-sm font-medium">Read more reviews on Google</span>

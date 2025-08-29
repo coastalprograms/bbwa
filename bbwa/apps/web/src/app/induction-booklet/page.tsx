@@ -248,7 +248,7 @@ export default function InductionBookletPage() {
               <span>20</span>
             </div>
             <div className="flex justify-between border-b border-gray-100 py-1">
-              <span>Residual Current Devices (RCDs or 'Safety Switches')</span>
+              <span>Residual Current Devices (RCDs or &apos;Safety Switches&apos;)</span>
               <span>21</span>
             </div>
             <div className="flex justify-between border-b border-gray-100 py-1">
@@ -367,7 +367,7 @@ export default function InductionBookletPage() {
                   Bayside Builders WA supports meaningful and effective consultation with personnel, contractors and other stakeholders, whose input is encouraged and incorporated into the decision-making processes regarding Health & Safety matters and observes relevant Codes of Practice, which must be followed unless a better approach is documented and adopted.
                 </p>
                 <p>
-                  Bayside Builders WA recognises that WHS is everyone's responsibility; therefore, all of our personnel and contractors have a duty of care to ensure the safety of themselves and others. The Bayside Builders WA Safety Management System outlines the specific WHS responsibilities of management, personnel and Subcontractors.
+                  Bayside Builders WA recognises that WHS is everyone&apos;s responsibility; therefore, all of our personnel and contractors have a duty of care to ensure the safety of themselves and others. The Bayside Builders WA Safety Management System outlines the specific WHS responsibilities of management, personnel and Subcontractors.
                 </p>
                 <p>
                   Bayside Builders WA will promote a proactive approach to health and safety and regularly review health and safety performance to monitor the effectiveness of health and safety actions.
@@ -405,10 +405,10 @@ export default function InductionBookletPage() {
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Injury Management Policy</h3>
               <div className="space-y-3">
                 <p>
-                  Bayside Builders WA is committed to assisting injured workers to return to work as soon as medically appropriate and will adhere to the requirements of the Workers' Compensation & Injury Management Act (1981) in the event of a work-related injury or illness.
+                  Bayside Builders WA is committed to assisting injured workers to return to work as soon as medically appropriate and will adhere to the requirements of the Workers&apos; Compensation & Injury Management Act (1981) in the event of a work-related injury or illness.
                 </p>
                 <p>
-                  Management supports the injury management process and recognises that success relies on the active participation and cooperation of the injured worker. Whenever possible, suitable duties will be arranged internally, having regard for the injured worker's medical restrictions.
+                  Management supports the injury management process and recognises that success relies on the active participation and cooperation of the injured worker. Whenever possible, suitable duties will be arranged internally, having regard for the injured worker&apos;s medical restrictions.
                 </p>
               </div>
             </div>
@@ -587,7 +587,7 @@ export default function InductionBookletPage() {
             </p>
             
             <p>
-              The Site Manager shall determine the need to complete an 'Incident/Injury Report Form' and/or undertake a formal incident investigation based on the circumstances of the incident/injury and/or the potential for the incident to cause greater harm.
+              The Site Manager shall determine the need to complete an &apos;Incident/Injury Report Form&apos; and/or undertake a formal incident investigation based on the circumstances of the incident/injury and/or the potential for the incident to cause greater harm.
             </p>
 
             <p className="font-medium">
@@ -693,7 +693,7 @@ export default function InductionBookletPage() {
                     <tr>
                       <td className="border border-gray-300 p-2 font-medium align-top">Medical treatment within 48 hours of exposure to a substance</td>
                       <td className="border border-gray-300 p-2">
-                        • 'Medical treatment' is treatment provided by a doctor.<br/>
+                        • &apos;Medical treatment&apos; is treatment provided by a doctor.<br/>
                         • Exposure to a substance includes exposure to chemicals, airborne contaminants and exposure to human and/or animal blood and body substances.
                       </td>
                     </tr>
@@ -772,8 +772,8 @@ export default function InductionBookletPage() {
                 <li>Substances are used properly, and plant/equipment is in safe working order and is maintained to a high standard.</li>
                 <li>Information, induction and on-the-job safety training is provided and that safe working procedures are clearly understood and consistently observed.</li>
                 <li>Safe Work Method Statements (SWMS) and/or Job Safety Analysis (JSA) are supplied by all Subcontractors carrying out work on site on behalf of Bayside Builders WA and on completion of the job forwarded to Head Office.</li>
-                <li>All SWMS/JSA's are reviewed by persons conducting the task and any other persons who may be placed in a hazardous situation.</li>
-                <li>Safe work procedures and SWMS/JSA's are followed.</li>
+                <li>All SWMS/JSA&apos;s are reviewed by persons conducting the task and any other persons who may be placed in a hazardous situation.</li>
+                <li>Safe work procedures and SWMS/JSA&apos;s are followed.</li>
                 <li>Regular workplace inspections are carried out and recorded.</li>
                 <li>All applicable legislation, standards, guidance notes and codes of practice are complied with.</li>
                 <li>All onsite personnel follow instructions and do not put others at risk.</li>
@@ -798,23 +798,23 @@ export default function InductionBookletPage() {
                 All Subcontractors engaged to perform work on Bayside Builders WA sites will, as part of their contract, comply with the Work Health & Safety Act (2020) and Work Health & Safety (General) Regulations (2022), Bayside Builders WA SMP and any other specified health and safety policies and procedures of Bayside Builders WA.
               </p>
               <p className="mb-3">
-                Where Bayside Builders WA engages Subcontractors, any formal contract must include the requirement that the Subcontractor's personnel and/or their sub-tier contractors are provided with site-specific safety information and that workers observe safety directions from the Main Contractor.
+                Where Bayside Builders WA engages Subcontractors, any formal contract must include the requirement that the Subcontractor&apos;s personnel and/or their sub-tier contractors are provided with site-specific safety information and that workers observe safety directions from the Main Contractor.
               </p>
               <p className="mb-3">
-                It is the responsibility of Bayside Builders WA Subcontractors to ensure that their personnel are made aware of this site-specific SMP and the requirements of the Bayside Builders WA 'Induction Booklet'.
+                It is the responsibility of Bayside Builders WA Subcontractors to ensure that their personnel are made aware of this site-specific SMP and the requirements of the Bayside Builders WA &apos;Induction Booklet&apos;.
               </p>
               
               <p className="font-medium mb-3">All Bayside Builders WA Subcontractors (and their personnel) must:</p>
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs">
                 <li>Report to Bayside Builders WA Site Manager any situation which they have reason to believe could present a risk.</li>
-                <li>Report any 'accident' or injury to health which arises at a Bayside Builders WA work site.</li>
+                <li>Report any &apos;accident&apos; or injury to health which arises at a Bayside Builders WA work site.</li>
                 <li>Use equipment appropriately and not interfere or misuse anything provided for their safety.</li>
                 <li>Co-operate with management by following instructions and wearing protective clothing or equipment as provided and instructed.</li>
                 <li>Complete the mandatory Construction Induction Course (White Card) as required by the Western Australian WHS Regulations.</li>
                 <li>Supply and wear all PPE that is not provided by Bayside Builders WA. All PPE that is provided by Bayside Builders WA must be maintained in good working order and worn at all times as directed by either Legislation, signage or by Bayside Builders WA Site Managers.</li>
-                <li>Prepare and submit to Bayside Builders WA a specific SWMS/JSA's for all high-risk construction work before starting work on site.</li>
-                <li>Meet with a Bayside Builders WA representative prior to commencing any work on the project to discuss any WHS requirements, the Subcontractors SWMS/JSA's and any other specific information relating to the contractor's activities.</li>
-                <li>Conduct activities and work in a safe and healthy manner and in accordance with the requirements of the Safety Management Plan, Inductions, WHS Legislation and applicable SWMS/JSA's.</li>
+                <li>Prepare and submit to Bayside Builders WA a specific SWMS/JSA&apos;s for all high-risk construction work before starting work on site.</li>
+                <li>Meet with a Bayside Builders WA representative prior to commencing any work on the project to discuss any WHS requirements, the Subcontractors SWMS/JSA&apos;s and any other specific information relating to the contractor&apos;s activities.</li>
+                <li>Conduct activities and work in a safe and healthy manner and in accordance with the requirements of the Safety Management Plan, Inductions, WHS Legislation and applicable SWMS/JSA&apos;s.</li>
               </ul>
             </div>
 
@@ -846,7 +846,7 @@ export default function InductionBookletPage() {
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs">
                 <li>Hazard identification and risk assessment processes;</li>
                 <li>Control measures for the management of hazards and risks;</li>
-                <li>Changes to the organisation's policies and procedures or work routines which may affect WHS.</li>
+                <li>Changes to the organisation&apos;s policies and procedures or work routines which may affect WHS.</li>
               </ul>
             </div>
           </div>
@@ -1003,7 +1003,7 @@ export default function InductionBookletPage() {
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Amenities</h3>
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs">
                 <li>Amenities such as toilets and water will be provided on site. Please report damage or malfunctioning facilities to the Site Manager.</li>
-                <li>The building under construction may be used to eat meals and provide shelter. Shelter may also be in the form of contractors' vehicles.</li>
+                <li>The building under construction may be used to eat meals and provide shelter. Shelter may also be in the form of contractors&apos; vehicles.</li>
                 <li>All food scraps, wrappers and containers are to be put into bins on site after each meal.</li>
               </ul>
             </div>
@@ -1011,7 +1011,7 @@ export default function InductionBookletPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Communication</h3>
               <p className="mb-2">
-                Clear communication is the key to improving safety, productivity, organisation and cost-effectiveness on the job. It's crucial to establish helpful communication methods for any construction site. Bayside Builders WA will utilise the following methods for communicating with personnel and contractors:
+                Clear communication is the key to improving safety, productivity, organisation and cost-effectiveness on the job. It&apos;s crucial to establish helpful communication methods for any construction site. Bayside Builders WA will utilise the following methods for communicating with personnel and contractors:
               </p>
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs">
                 <li>Daily pre-start meetings</li>
@@ -1065,7 +1065,7 @@ export default function InductionBookletPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Excavations & Trenches</h3>
               <p className="mb-2">
-                Excavation and trenching works should be conducted in accordance with the WA Code of Practice, 'Excavation'. This code outlines accepted safe practices and recommendations for excavation work in Western Australia.
+                Excavation and trenching works should be conducted in accordance with the WA Code of Practice, &apos;Excavation&apos;. This code outlines accepted safe practices and recommendations for excavation work in Western Australia.
               </p>
               <p className="mb-2">
                 The WA WHS Regulations identifies excavation work over 1.5 metres deep to be a high-risk work activity and therefore a SWMS/JSA must be developed and excavation permit obtained for this work activity prior to commencement of excavation works.
@@ -1109,7 +1109,7 @@ export default function InductionBookletPage() {
               <p className="mb-2">All hazards are to be controlled in accordance with:</p>
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs mb-3">
                 <li>All Western Australia Work Health & Safety Regulations.</li>
-                <li>All relevant 'Standards Australia' Codes of Practice.</li>
+                <li>All relevant &apos;Standards Australia&apos; Codes of Practice.</li>
                 <li>Accepted industry standards and recognised guidance materials.</li>
               </ul>
               <p className="mb-2">Any hazards that you are unable to control MUST be reported to the Site Manager.</p>
@@ -1117,7 +1117,7 @@ export default function InductionBookletPage() {
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs mb-2">
                 <li>Barricade the hazard or hazardous area off.</li>
                 <li>Warn other personnel on site.</li>
-                <li>Cease use of affected plant or tools and tag 'Out of Service'.</li>
+                <li>Cease use of affected plant or tools and tag &apos;Out of Service&apos;.</li>
               </ul>
               <p className="text-xs">Follow the guidelines of Material Safety Data Sheets (MSDS/SDS) where a hazardous substance is involved.</p>
             </div>
@@ -1189,7 +1189,7 @@ export default function InductionBookletPage() {
                 <li>Ladders are to be set up on an angle of 1 metre out at the base to every 4 metres up, be placed on firm level ground and secured to prevent movement.</li>
                 <li>Ladders must be maintained in a serviceable condition.</li>
                 <li>Ladders must extend at least 900mm above the landing.</li>
-                <li>Step ladders are to be used in accordance with the manufacturer's guidelines.</li>
+                <li>Step ladders are to be used in accordance with the manufacturer&apos;s guidelines.</li>
                 <li>3 points of contact must be maintained when climbing up or down a ladder.</li>
                 <li>Extension ladders must not be used to provide access to scaffold.</li>
                 <li>Ladders must be suitable for the task (i.e. non-conductive ladders used for electrical work).</li>
@@ -1228,7 +1228,7 @@ export default function InductionBookletPage() {
 
               <ul className="list-disc list-inside space-y-1 ml-4 text-xs">
                 <li>With heavy or awkward loads, get help or use mechanical assistance such as a forklift.</li>
-                <li>If it is too heavy, don't lift it!</li>
+                <li>If it is too heavy, don&apos;t lift it!</li>
               </ul>
             </div>
           </div>
@@ -1253,7 +1253,7 @@ export default function InductionBookletPage() {
             <div>
               <h3 className="text-base font-semibold text-gray-800 mb-2">Nail Guns & Explosive Powered Tools</h3>
               <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>Where nail guns or explosive powered tools are being used safety signage such as 'Warning – Nail Gun in Use', shall be erected at ALL access points to the area, not just on the back of the vehicle.</li>
+                <li>Where nail guns or explosive powered tools are being used safety signage such as &apos;Warning – Nail Gun in Use&apos;, shall be erected at ALL access points to the area, not just on the back of the vehicle.</li>
                 <li>All appropriate PPE, such as hearing protection, shall be used at all times.</li>
                 <li>Tools shall not be left unattended while still active.</li>
                 <li>Tools are to be maintained in a serviceable condition at all times.</li>
@@ -1307,8 +1307,8 @@ export default function InductionBookletPage() {
               <ul className="list-disc list-inside space-y-1 ml-4">
                 <li>Subcontractors using mobile plant (e.g. mobile cranes, excavators, forklifts, elevated work platforms, etc.) are required to provide Bayside Builders WA with a SWMS/JSA prior to the commencement of works.</li>
                 <li>Plant registration details, where required, shall be readily available and plant registration numbers clearly displayed.</li>
-                <li>All mobile plant shall be maintained to the manufacturer's specifications and operator's log books are to be kept up-to-date. The logbook should be readily available upon request by Bayside Builders WA.</li>
-                <li>Mobile plant requiring operator's licenses are only to be operated by appropriately licensed persons. It is the responsibility of the contractors to use appropriately licensed persons.</li>
+                <li>All mobile plant shall be maintained to the manufacturer&apos;s specifications and operator&apos;s log books are to be kept up-to-date. The logbook should be readily available upon request by Bayside Builders WA.</li>
+                <li>Mobile plant requiring operator&apos;s licenses are only to be operated by appropriately licensed persons. It is the responsibility of the contractors to use appropriately licensed persons.</li>
                 <li>Where no formal license is required to operate a specific piece of plant, operators must be able to demonstrate competence in operating that plant.</li>
               </ul>
             </div>
@@ -1317,12 +1317,12 @@ export default function InductionBookletPage() {
               <h3 className="text-base font-semibold text-gray-800 mb-2">Public Safety</h3>
               <ul className="list-disc list-inside space-y-1 ml-4">
                 <li>Bayside Builders WA will ensure that clearly displayed signs are erected on the boundary describing the site as being a construction site.</li>
-                <li>A spotter will guide vehicles or equipment reversing onto or off the site, so that workers aren't driving blindly into areas where there may be pedestrians and other vehicles.</li>
+                <li>A spotter will guide vehicles or equipment reversing onto or off the site, so that workers aren&apos;t driving blindly into areas where there may be pedestrians and other vehicles.</li>
               </ul>
               <p className="mt-3 mb-2 font-medium">When a site is left unattended:</p>
               <ul className="list-disc list-inside space-y-1 ml-4">
                 <li>If a perimeter site fence is in use, the last worker to leave the site must ensure that access points to the site are to be secured,</li>
-                <li>If no perimeter site fence is in use, then it is the personnel or Subcontractor's responsibility to secure or remove any hazards associated with their work prior to leaving the site. For example:
+                <li>If no perimeter site fence is in use, then it is the personnel or Subcontractor&apos;s responsibility to secure or remove any hazards associated with their work prior to leaving the site. For example:
                   <ul className="list-disc list-inside space-y-1 ml-6 mt-1">
                     <li>Do not leave large drums containing water unless they have a secure lid.</li>
                     <li>Barriers or fencing erected along potential fall hazards and/or retaining walls.</li>
@@ -1334,18 +1334,18 @@ export default function InductionBookletPage() {
             </div>
 
             <div>
-              <h3 className="text-base font-semibold text-gray-800 mb-2">Residual Current Devices (RCDs or 'Safety Switches')</h3>
+              <h3 className="text-base font-semibold text-gray-800 mb-2">Residual Current Devices (RCDs or &apos;Safety Switches&apos;)</h3>
               <ul className="list-disc list-inside space-y-1 ml-4">
                 <li>Contractors using portable electrical equipment on Bayside Builders WA worksites must do so in conjunction with a portable Residual Current Device (RCD), tested and tagged in accordance with Western Australian legislation.</li>
-                <li>Domestic RCD's are not permitted on Bayside Builders WA sites.</li>
+                <li>Domestic RCD&apos;s are not permitted on Bayside Builders WA sites.</li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-base font-semibold text-gray-800 mb-2">Scaffolds</h3>
               <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>All scaffolding is to be erected using safe manual handling and construction practices in accordance with the manufacturers or supplier's guidelines.</li>
-                <li>All erected scaffolding is to be compliant with the manufacturer's guidelines, Australian Standards or the Western Australian Code of Practice AS/NZS4576:1995 – Guidelines for scaffolding.</li>
+                <li>All scaffolding is to be erected using safe manual handling and construction practices in accordance with the manufacturers or supplier&apos;s guidelines.</li>
+                <li>All erected scaffolding is to be compliant with the manufacturer&apos;s guidelines, Australian Standards or the Western Australian Code of Practice AS/NZS4576:1995 – Guidelines for scaffolding.</li>
                 <li>All scaffolds where a person could fall more than 2 metres MUST be provided with edge protection.</li>
               </ul>
               <p className="mt-3 mb-2 font-medium">Scaffolds where a person can fall more than 4 metres:</p>
@@ -1441,7 +1441,7 @@ export default function InductionBookletPage() {
             <div>
               <h3 className="text-base font-semibold text-gray-800 mb-2">Working At Height</h3>
               <p className="mb-3">
-                The WA Code of Practice 'Prevention of Falls at Work Places' should be observed when working at height. The following guidelines shall be complied with at all times:
+                The WA Code of Practice &apos;Prevention of Falls at Work Places&apos; should be observed when working at height. The following guidelines shall be complied with at all times:
               </p>
               <ul className="list-disc list-inside space-y-1 ml-4">
                 <li>Safe access must be provided to all elevated work areas.</li>

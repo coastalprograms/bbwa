@@ -259,7 +259,7 @@ export default function ServicesPage() {
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Start Your Construction Project?</h2>
               <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                Let's discuss your project and see how we can help bring your vision to life with quality construction services.
+                Let&apos;s discuss your project and see how we can help bring your vision to life with quality construction services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="group" asChild>

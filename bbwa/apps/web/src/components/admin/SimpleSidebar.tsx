@@ -88,7 +88,7 @@ export function SimpleSidebar({ children }: SimpleSidebarProps) {
               return (
                 <Link
                   key={item.title}
-                  href={item.url}
+                  href={item.url as any}
                   className={`flex items-center px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 transition-colors ${
                     isCollapsed ? 'justify-center' : 'gap-3'
                   }`}

@@ -178,7 +178,7 @@ export default function ContactPage() {
                     <div>
                       <CardTitle className="text-2xl">Send Us a Message</CardTitle>
                       <CardDescription className="mt-2">
-                        Tell us about your project and we'll get back to you with a free quote within 24 hours
+                        Tell us about your project and we&apos;ll get back to you with a free quote within 24 hours
                       </CardDescription>
                     </div>
                     <Badge variant="outline" className="hidden sm:inline-flex">

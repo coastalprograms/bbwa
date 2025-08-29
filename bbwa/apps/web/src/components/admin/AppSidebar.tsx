@@ -82,7 +82,7 @@ function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild tooltip={item.title}>
-                      <Link href={item.url}>
+                      <Link href={item.url as any}>
                         <Icon className="w-5 h-5" />
                         <span>{item.title}</span>
                       </Link>
@@ -134,7 +134,7 @@ export function AppSidebar({ children, title = "Dashboard" }: AppSidebarProps) {
               return (
                 <Link
                   key={item.title}
-                  href={item.url}
+                  href={item.url as any}
                   className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100 hover:text-gray-900"
                 >
                   <Icon className="w-5 h-5 mr-3" />

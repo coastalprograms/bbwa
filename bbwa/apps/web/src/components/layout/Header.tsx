@@ -99,7 +99,7 @@ export function Header() {
                     shouldUseDarkText || isScrolled ? "text-gray-700" : "text-white"
                   )}
                 >
-                  <Link href={item.href}>
+                  <Link href={item.href as any}>
                     {item.label}
                     {pathname === item.href && (
                       <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
@@ -157,7 +157,7 @@ export function Header() {
                       )}
                     >
                       <Link
-                        href={item.href}
+                        href={item.href as any}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}

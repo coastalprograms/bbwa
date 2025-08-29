@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -61,9 +62,11 @@ export function Navigation() {
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href={logoHref} className="flex items-center space-x-4">
-            <img 
+            <Image 
               src="/logo BG.png" 
               alt="Bayside Builders WA" 
+              width={64}
+              height={64}
               className="h-16 w-auto"
             />
             <span className={cn(

@@ -107,14 +107,14 @@ export function HeroSection({
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
         <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-          <Link href={primaryCta.href}>
+          <Link href={primaryCta.href as any}>
             {primaryCta.text}
             <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Link>
         </Button>
         
         <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" asChild>
-          <Link href={secondaryCta.href}>
+          <Link href={secondaryCta.href as any}>
             {secondaryCta.text}
           </Link>
         </Button>

@@ -237,7 +237,7 @@ export default function HomeRenovationsPage() {
             Ready to Transform Your Home?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Let's discuss your renovation project and bring your vision to life.
+            Let&apos;s discuss your renovation project and bring your vision to life.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

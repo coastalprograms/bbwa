@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -59,10 +59,14 @@ export default function InteractiveServiceCard({ service, index }: InteractiveSe
   return (
     <ConstructionCursor tool={getConstructionTool()}>
       <Card 
-        ref={(el) => {
-          cardRef.current = el
-          parallaxRef.current = el
-        }}
+        ref={useCallback((el: HTMLDivElement | null) => {
+          if (cardRef) {
+            cardRef.current = el
+          }
+          if (parallaxRef) {
+            parallaxRef.current = el  
+          }
+        }, [cardRef, parallaxRef])}
         className={`group relative overflow-hidden cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl ${
           isHovered ? 'scale-105 -translate-y-4' : 'hover:-translate-y-2'
         }`}
@@ -202,7 +206,7 @@ export default function InteractiveServiceCard({ service, index }: InteractiveSe
               }`} 
               asChild
             >
-              <Link href={`/services/${service.slug}`}>
+              <Link href={`/services/${service.slug}` as any}>
                 <span className="relative z-10">Learn More</span>
                 <ArrowRightIcon className={`ml-2 h-4 w-4 transition-all duration-300 ${
                   isHovered ? 'translate-x-2 scale-110' : 'group-hover/btn:translate-x-1'

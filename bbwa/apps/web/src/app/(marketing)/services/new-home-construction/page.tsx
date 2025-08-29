@@ -44,7 +44,7 @@ export default function NewHomeConstructionPage() {
       {/* Features */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">What's Included</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">What&apos;s Included</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6">
@@ -227,7 +227,7 @@ export default function NewHomeConstructionPage() {
             Ready to Build Your Dream Home?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Get a free consultation and quote from Perth's trusted construction professionals.
+            Get a free consultation and quote from Perth&apos;s trusted construction professionals.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

@@ -60,7 +60,12 @@
       "Bash(\"C:\\Users\\jakes\\Developer\\bbwa\\move_large_items.sh\")",
       "Bash(\"C:\\Users\\jakes\\Developer\\bbwa\\move_directories.sh\")",
       "mcp__github__create_pull_request",
-      "mcp__github__list_pull_requests"
+      "mcp__github__list_pull_requests",
+      "Bash(dir:*)",
+      "Bash(test -f turbo.json)",
+      "Bash(test:*)",
+      "Bash(npm --version)",
+      "Bash(timeout 120 npm run build)"
     ],
     "deny": [],
     "ask": []

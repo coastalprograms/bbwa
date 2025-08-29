@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { StarIcon, CheckIcon, QuoteIcon } from 'lucide-react'
@@ -101,9 +102,11 @@ export default function AnimatedTestimonial({ testimonial, index }: TestimonialP
             <div className={`relative transition-all duration-300 ${
               isHovered ? 'scale-110' : ''
             }`}>
-              <img 
+              <Image 
                 src={testimonial.avatar} 
                 alt={`${testimonial.name} profile`}
+                width={64}
+                height={64}
                 className={`w-16 h-16 rounded-full object-cover ring-2 transition-all duration-300 ${
                   isHovered ? 'ring-primary ring-4 shadow-lg' : 'ring-primary/20'
                 }`}

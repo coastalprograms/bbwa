@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { 
@@ -33,7 +33,7 @@ export default function EnhancedHero({ onScrollToNext }: EnhancedHeroProps) {
   const [currentEmoji, setCurrentEmoji] = useState('🏗️')
 
   const fullText = "Perth's Premier Construction Specialists"
-  const constructionEmojis = ['🏗️', '🔨', '🏠', '⚒️', '🧱']
+  const constructionEmojis = useMemo(() => ['🏗️', '🔨', '🏠', '⚒️', '🧱'], [])
 
   // Typewriter effect for hero title
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function EnhancedHero({ onScrollToNext }: EnhancedHeroProps) {
     }, 2000)
 
     return () => clearInterval(emojiTimer)
-  }, [])
+  }, [constructionEmojis])
 
   return (
     <section 
