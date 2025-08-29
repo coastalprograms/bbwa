@@ -21,12 +21,11 @@ describe('submitContactForm', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     mockCreateClient.mockResolvedValue(mockSupabaseClient as any)
-    // Clear rate limit map between tests
-    jest.resetModules()
   })
 
   const validFormData = {
-    name: 'John Smith',
+    first_name: 'John',
+    last_name: 'Smith',
     email: 'john@example.com',
     phone: '0400 000 000',
     message: 'This is a test message with more than 20 characters',
@@ -39,7 +38,7 @@ describe('submitContactForm', () => {
     const result = await submitContactForm(validFormData)
     
     expect(result.success).toBe(true)
-    expect(result.message).toBe('Thank you for your message! We\'ll get back to you within 24 hours.')
+    expect(result.message).toBe('Thank you for your message! We&apos;ll get back to you within 24 hours.')
     expect(mockSupabaseClient.from).toHaveBeenCalledWith('contact_leads')
     expect(mockSupabaseClient.insert).toHaveBeenCalledWith({
       name: 'John Smith',
@@ -62,13 +61,22 @@ describe('submitContactForm', () => {
     expect(mockSupabaseClient.insert).not.toHaveBeenCalled()
   })
 
-  it('validates required name field', async () => {
-    const invalidData = { ...validFormData, name: 'J' }
+  it('validates required first name field', async () => {
+    const invalidData = { ...validFormData, first_name: 'J' }
     
     const result = await submitContactForm(invalidData)
     
     expect(result.success).toBe(false)
-    expect(result.error).toBe('Name must be at least 2 characters')
+    expect(result.error).toBe('First name must be at least 2 characters')
+  })
+
+  it('validates required last name field', async () => {
+    const invalidData = { ...validFormData, last_name: 'S' }
+    
+    const result = await submitContactForm(invalidData)
+    
+    expect(result.success).toBe(false)
+    expect(result.error).toBe('Last name must be at least 2 characters')
   })
 
   it('validates email format', async () => {
@@ -91,7 +99,8 @@ describe('submitContactForm', () => {
 
   it('handles optional fields correctly', async () => {
     const minimalData = {
-      name: 'John Smith',
+      first_name: 'John',
+      last_name: 'Smith',
       email: 'john@example.com',
       message: 'This is a test message with more than 20 characters',
       honeypot: ''
@@ -111,17 +120,26 @@ describe('submitContactForm', () => {
   })
 
   it('implements rate limiting', async () => {
+    // Mock headers to use a specific IP for this test
+    const mockHeaders = {
+      get: jest.fn().mockReturnValue('192.168.1.100') // Unique IP for rate limiting test
+    }
+    jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
+    
+    // Re-import the function to get fresh module with new IP
+    const { submitContactForm: testSubmitContactForm } = await import('./contact')
+    
     // Mock console.error to avoid noise in test output
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
     
     // First 3 requests should succeed
     for (let i = 0; i < 3; i++) {
-      const result = await submitContactForm(validFormData)
+      const result = await testSubmitContactForm(validFormData)
       expect(result.success).toBe(true)
     }
     
     // 4th request should be rate limited
-    const rateLimitedResult = await submitContactForm(validFormData)
+    const rateLimitedResult = await testSubmitContactForm(validFormData)
     expect(rateLimitedResult.success).toBe(false)
     expect(rateLimitedResult.error).toBe('Too many requests. Please wait a minute before trying again.')
     
@@ -129,10 +147,17 @@ describe('submitContactForm', () => {
   })
 
   it('handles Supabase errors', async () => {
+    // Use unique IP to avoid rate limiting from other tests
+    const mockHeaders = {
+      get: jest.fn().mockReturnValue('192.168.1.101')
+    }
+    jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
+    
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
     mockSupabaseClient.insert.mockResolvedValue({ error: { message: 'Database error' } })
     
-    const result = await submitContactForm(validFormData)
+    const { submitContactForm: testSubmitContactForm } = await import('./contact')
+    const result = await testSubmitContactForm(validFormData)
     
     expect(result.success).toBe(false)
     expect(result.error).toBe('Failed to submit form. Please try again.')
@@ -142,10 +167,20 @@ describe('submitContactForm', () => {
   })
 
   it('handles unexpected errors', async () => {
-    const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
-    mockCreateClient.mockRejectedValue(new Error('Unexpected error'))
+    // Use unique IP to avoid rate limiting from other tests
+    const mockHeaders = {
+      get: jest.fn().mockReturnValue('192.168.1.102')
+    }
+    jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
     
-    const result = await submitContactForm(validFormData)
+    const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
+    const mockCreateClientError = jest.fn().mockRejectedValue(new Error('Unexpected error'))
+    jest.doMock('@/lib/supabase/server', () => ({
+      createClient: mockCreateClientError
+    }))
+    
+    const { submitContactForm: testSubmitContactForm } = await import('./contact')
+    const result = await testSubmitContactForm(validFormData)
     
     expect(result.success).toBe(false)
     expect(result.error).toBe('An unexpected error occurred. Please try again.')

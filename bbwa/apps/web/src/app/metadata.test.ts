@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect } from '@jest/globals'
 import { metadata as rootMetadata } from './layout'
 import { metadata as marketingMetadata } from './(marketing)/layout'
 

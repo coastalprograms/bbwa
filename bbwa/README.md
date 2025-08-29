@@ -349,6 +349,8 @@ bbwa/                                    # Root monorepo
 - **Supabase Project Access** - Linked project with authentication
 
 ### Development Setup
+
+#### Option 1: Interactive Setup (Recommended)
 ```bash
 # 1. Clone and install dependencies
 git clone <repository-url>
@@ -365,42 +367,69 @@ supabase db push
 # 4. Generate TypeScript types from database
 supabase gen types typescript --linked > apps/web/src/types/supabase.generated.ts
 
-# 5. Set up environment variables (copy from .env.example)
-cp apps/web/.env.example apps/web/.env.local
-# Edit .env.local with your actual values
+# 5. Interactive environment setup wizard
+npm run setup
+# This guides you through all environment configuration
 
-# 6. Start development server
+# 6. Start development (automatically validates environment first)
 npm run dev
-
-# 7. (Optional) Serve Edge Functions locally
-supabase functions serve airtable-faq --no-verify-jwt
 ```
 
-### Environment Variables
-Create `apps/web/.env.local` with these required variables:
+#### Option 2: Manual Setup
+```bash
+# Follow steps 1-4 above, then:
 
-```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+# 5. Copy environment template and configure manually
+cp .env.example .env.local
+# Edit .env.local with your values (see Environment Setup Guide)
 
-# AI Integration
-GEMINI_API_KEY=your-gemini-api-key
-OPENAI_API_KEY=your-openai-key  # Optional alternative
+# 6. Validate your configuration
+npm run env:validate
 
-# Google Maps
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your-maps-key
-
-# Feature Flags
-FAQ_SOURCE=airtable  # or 'local' for development
-FAQ_LIMIT=50
-
-# Session Security
-SESSION_SECRET=your-secure-session-secret
-
-# See supabase/README.md for Edge Function secrets
+# 7. Start development server
+npm run dev
 ```
+
+### Environment Configuration
+
+**NEW: Unified Environment System** 🎉
+
+The environment configuration has been completely streamlined with:
+- ✅ Single `.env.example` at root level with comprehensive documentation
+- ✅ Interactive setup wizard: `npm run setup`
+- ✅ Built-in validation: `npm run env:validate`
+- ✅ Clear variable hierarchy (Critical → Important → Optional)
+- ✅ Security best practices and troubleshooting guides
+
+**Quick Environment Setup:**
+```bash
+# Interactive setup (recommended for new developers)
+npm run setup
+
+# Manual validation
+npm run env:validate
+
+# Check specific configuration
+npm run env:check
+```
+
+**Critical Variables** (app won't start without these):
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `SESSION_SECRET`
+
+**Important Variables** (features disabled without these):
+- `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
+- `AI_PROVIDER` + corresponding API key
+
+**Optional Variables** (graceful fallbacks):
+- `AUTOMATION_WEBHOOK_*` (compliance alerts)
+- `AIRTABLE_*` (CMS integration)
+
+📖 **Detailed Setup Guide**: [docs/environment-setup.md](docs/environment-setup.md)
+
+🔄 **Migrating from Old Setup?** See [MIGRATION.md](MIGRATION.md)
 
 ## 🏗️ Tech Stack Deep Dive
 
@@ -519,8 +548,13 @@ SESSION_SECRET=your-secure-session-secret
 ## 🔧 Available Scripts
 
 ```bash
+# Environment Setup (NEW!)
+npm run setup           # Interactive environment setup wizard
+npm run env:validate    # Validate environment configuration
+npm run env:check       # Quick environment health check
+
 # Development
-npm run dev              # Start Next.js development server
+npm run dev             # Start Next.js development server
 npm run build           # Production build
 npm run start           # Start production server
 

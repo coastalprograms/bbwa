@@ -1,7 +1,98 @@
+# Build Configuration
 [build]
   base = "apps/web"
-  command = "npm run build"
+  command = "cd ../.. && npm run build:prod"
   publish = ".next"
+  
+  # Build environment variables
+  environment = { NODE_ENV = "production", TURBO_TOKEN = "", TURBO_TEAM = "" }
 
+# Build Settings
+[build.processing]
+  skip_processing = false
+  
+[build.processing.css]
+  bundle = true
+  minify = true
+  
+[build.processing.js]
+  bundle = true
+  minify = true
+  
+[build.processing.html]
+  pretty_urls = true
+  
+[build.processing.images]
+  compress = true
+
+# Cache Configuration for Performance
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, s-maxage=86400"
+    
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+# Plugins
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  
+# Build optimization plugin
+[[plugins]]
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    paths = [ "node_modules", ".turbo" ]
+    
+# Environment-specific deployments
+[context.production]
+  command = "cd ../.. && npm run ci:validate && npm run build:prod"
+  
+[context.deploy-preview]
+  command = "cd ../.. && npm run env:validate && npm run build"
+  
+[context.branch-deploy]
+  command = "cd ../.. && npm run build"
+  
+# Dev server for local testing
+[dev]
+  command = "cd ../.. && npm run dev"
+  port = 3000
+  publish = "apps/web"
+  
+# Functions configuration for Supabase edge functions
+[functions]
+  directory = "supabase/functions"
+  
+# Redirects for better UX
+[[redirects]]
+  from = "/admin/certifications"
+  to = "/admin/workers"
+  status = 301
+  force = true
+  
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/health-check"
+  status = 200
+  
+# Error pages
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
