@@ -1,29 +1,29 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { describe, it, expect, jest, beforeEach, afterEach } from '@jest/globals'
 import { render, screen } from '@testing-library/react'
 import { WebVitals } from './web-vitals'
 
 // Mock next/web-vitals
-const mockUseReportWebVitals = vi.fn()
-vi.mock('next/web-vitals', () => ({
+const mockUseReportWebVitals = jest.fn()
+jest.mock('next/web-vitals', () => ({
   useReportWebVitals: mockUseReportWebVitals,
 }))
 
 // Mock fetch
-const mockFetch = vi.fn()
-global.fetch = mockFetch
+const mockFetch = jest.fn()
+global.fetch = mockFetch as any
 
 describe('WebVitals Component', () => {
   beforeEach(() => {
-    vi.clearAllMocks()
+    jest.clearAllMocks()
     // Mock window.gtag
     Object.defineProperty(window, 'gtag', {
-      value: vi.fn(),
+      value: jest.fn(),
       writable: true,
     })
   })
 
   afterEach(() => {
-    vi.restoreAllMocks()
+    jest.restoreAllMocks()
   })
 
   it('should render without crashing', () => {
@@ -50,7 +50,7 @@ describe('WebVitals Component', () => {
       const originalEnv = process.env.NODE_ENV
       process.env.NODE_ENV = 'development'
       
-      const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
+      const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {})
       
       const metric = {
         name: 'FCP',
@@ -71,7 +71,7 @@ describe('WebVitals Component', () => {
       const originalEnv = process.env.NODE_ENV
       process.env.NODE_ENV = 'production'
       
-      const mockGtag = vi.fn()
+      const mockGtag = jest.fn()
       ;(window as any).gtag = mockGtag
 
       const metric = {
@@ -133,7 +133,7 @@ describe('WebVitals Component', () => {
       const originalEnv = process.env.NODE_ENV
       process.env.NODE_ENV = 'production'
       
-      const mockGtag = vi.fn()
+      const mockGtag = jest.fn()
       ;(window as any).gtag = mockGtag
 
       const metric = {
@@ -157,7 +157,7 @@ describe('WebVitals Component', () => {
       process.env.NODE_ENV = 'production'
       
       mockFetch.mockRejectedValueOnce(new Error('Network error'))
-      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation(() => {})
 
       const metric = {
         name: 'FID',

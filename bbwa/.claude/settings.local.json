@@ -40,7 +40,16 @@
       "mcp__serena__find_symbol",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "Bash(chmod:*)",
+      "Bash(dir)",
+      "Bash(mkdir:*)",
+      "Bash(turbo:*)",
+      "Bash(npx turbo:*)",
+      "Bash(npm test)",
+      "Bash(npm test:*)"
     ],
     "deny": [],
     "ask": []

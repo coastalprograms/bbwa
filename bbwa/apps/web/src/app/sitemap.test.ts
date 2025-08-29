@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { describe, it, expect, jest, beforeEach, afterEach } from '@jest/globals'
 import sitemap from './sitemap'
 
 // Mock Supabase client
@@ -8,20 +8,20 @@ const mockSupabaseData = [
   { slug: 'commercial-office-fitout', updated_at: '2024-01-25T09:15:00Z' },
 ]
 
-vi.mock('@/lib/supabase/server', () => ({
-  createClient: vi.fn(() => ({
-    from: vi.fn(() => ({
-      select: vi.fn(() => ({
-        eq: vi.fn(() => ({
-          then: vi.fn(),
-          catch: vi.fn(),
+jest.mock('@/lib/supabase/server', () => ({
+  createClient: jest.fn(() => ({
+    from: jest.fn(() => ({
+      select: jest.fn(() => ({
+        eq: jest.fn(() => ({
+          then: jest.fn(),
+          catch: jest.fn(),
         })),
       })),
     })),
   })),
 }))
 
-vi.mock('@/lib/services-data', () => ({
+jest.mock('@/lib/services-data', () => ({
   servicesData: [
     { slug: 'new-home-construction' },
     { slug: 'home-renovations' },
@@ -34,22 +34,22 @@ vi.mock('@/lib/services-data', () => ({
 
 describe('Sitemap Generation', () => {
   beforeEach(() => {
-    vi.clearAllMocks()
+    jest.clearAllMocks()
   })
 
   afterEach(() => {
-    vi.restoreAllMocks()
+    jest.restoreAllMocks()
   })
 
   it('should generate sitemap with static routes', async () => {
     // Mock successful database response
     const { createClient } = await import('@/lib/supabase/server')
     const mockClient = createClient()
-    vi.mocked(mockClient.from).mockReturnValue({
-      select: vi.fn().mockReturnValue({
-        eq: vi.fn().mockReturnValue({
-          then: vi.fn().mockResolvedValue({ data: mockSupabaseData }),
-          catch: vi.fn(),
+    jest.mocked(mockClient.from).mockReturnValue({
+      select: jest.fn().mockReturnValue({
+        eq: jest.fn().mockReturnValue({
+          then: jest.fn().mockResolvedValue({ data: mockSupabaseData }),
+          catch: jest.fn(),
         }),
       }),
     } as any)
@@ -95,11 +95,11 @@ describe('Sitemap Generation', () => {
     // Mock database error
     const { createClient } = await import('@/lib/supabase/server')
     const mockClient = createClient()
-    vi.mocked(mockClient.from).mockReturnValue({
-      select: vi.fn().mockReturnValue({
-        eq: vi.fn().mockReturnValue({
-          then: vi.fn().mockRejectedValue(new Error('Database error')),
-          catch: vi.fn(),
+    jest.mocked(mockClient.from).mockReturnValue({
+      select: jest.fn().mockReturnValue({
+        eq: jest.fn().mockReturnValue({
+          then: jest.fn().mockRejectedValue(new Error('Database error')),
+          catch: jest.fn(),
         }),
       }),
     } as any)
