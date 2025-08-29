@@ -49,7 +49,18 @@
       "Bash(turbo:*)",
       "Bash(npx turbo:*)",
       "Bash(npm test)",
-      "Bash(npm test:*)"
+      "Bash(npm test:*)",
+      "mcp__github__get_file_contents",
+      "mcp__github__create_branch",
+      "mcp__github__create_or_update_file",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(python:*)",
+      "Bash(\"C:\\Users\\jakes\\Developer\\bbwa\\finish_flatten.sh\")",
+      "Bash(\"C:\\Users\\jakes\\Developer\\bbwa\\move_large_items.sh\")",
+      "Bash(\"C:\\Users\\jakes\\Developer\\bbwa\\move_directories.sh\")",
+      "mcp__github__create_pull_request",
+      "mcp__github__list_pull_requests"
     ],
     "deny": [],
     "ask": []
