@@ -1,0 +1,30 @@
+# Coding Standards
+
+- **Languages**: TypeScript (strict mode) for all app code; Markdown for docs using Australian English spelling.
+- **Framework**: Next.js 14+ with App Router. Use Server Components by default; mark Client Components only when necessary.
+- **Styling**: Tailwind CSS utility classes. Avoid custom global CSS except framework resets. Prefer Shadcn/ui components for consistency.
+- **Naming**:
+  - Files: kebab-case (e.g., `project-card.tsx`), React components PascalCase, hooks `useXxx.ts`.
+  - Folders: feature-based, kebab-case (e.g., `projects/`, `workers/`).
+  - Exports: use barrel `index.ts` where it improves DX.
+- **Imports Order**: external libs, absolute aliases, internal modules, relative paths. No unused imports.
+- **Components**:
+  - Functional components with explicit props interfaces.
+  - Keep files under ~300 lines; split where needed.
+  - Accessibility: follow WCAG 2.2 (labels, focus states, keyboard nav, contrast).
+- **State & Data**:
+  - Server Actions with proper error handling (try/catch) and typed responses.
+  - Supabase `createClient()` pattern in server modules; never expose secrets in Client Components.
+  - Clean up real-time subscriptions.
+- **Security**:
+  - Row Level Security (RLS) on all tables (enforced in DB stories).
+  - Validate inputs on both client and server; never trust client data.
+  - Use environment variables; do not hardcode secrets.
+- **Performance & SEO**:
+  - Optimise Core Web Vitals; use `next/image` and dynamic imports where appropriate.
+  - Provide metadata and OpenGraph where needed; generate sitemaps later.
+- **Testing & QA**:
+  - Lint and type-check must pass in CI.
+  - Provide smoke tests for key routes and components.
+- **Commits & Docs**:
+  - Conventional Commits. Keep README/feature docs up to date.

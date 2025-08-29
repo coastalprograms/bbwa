@@ -1,0 +1,20 @@
+# Root ignores
+node_modules/
+.next/
+out/
+dist/
+build/
+.vercel/
+.netlify/
+
+# Env files
+.env
+.env.*
+!.env.example
+apps/web/.env.local
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

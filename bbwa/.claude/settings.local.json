@@ -1,0 +1,76 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__serena_check_onboarding_performed",
+      "mcp__serena_list_dir",
+      "mcp__serena_find_file",
+      "mcp__serena_read_memory",
+      "Bash(cat:*)",
+      "Bash(npm start)",
+      "Bash(npm run:*)",
+      "mcp__shadcn-ui__get_component",
+      "Bash(npm install:*)",
+      "Bash(start chrome http://localhost:3000)",
+      "Bash(cmd /c:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "mcp__serena__check_onboarding_performed",
+      "mcp__serena__find_file",
+      "mcp__serena__search_for_pattern",
+      "mcp__serena__list_dir",
+      "mcp__serena__list_dir",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(cp:*)",
+      "Bash(tasklist:*)",
+      "Bash(taskkill:*)",
+      "Bash(rm:*)",
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)",
+      "Bash(start chrome http://localhost:3005)",
+      "mcp__serena__read_memory",
+      "mcp__serena__think_about_collected_information",
+      "mcp__serena__get_symbols_overview",
+      "mcp__serena__find_symbol",
+      "Bash(findstr:*)",
+      "mcp__brave-search__brave_web_search",
+      "Bash(powershell:*)",
+      "Bash(start chrome http://localhost:3007)",
+      "Bash(node:*)",
+      "Bash(npx eslint:*)",
+      "mcp__serena__find_symbol",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$CLAUDE_TOOL_USE_INPUT\" == *\".tsx\"* ]] || [[ \"$CLAUDE_TOOL_USE_INPUT\" == *\".ts\"* ]]; then echo 'Auto-fixing TypeScript...'; npm run lint --fix --silent 2>/dev/null || echo 'Lint skipped'; fi"
+          },
+          {
+            "type": "command",
+            "command": "if [[ \"$CLAUDE_TOOL_USE_INPUT\" == *\"supabase/migrations\"* ]]; then echo 'Generating Supabase types...'; npm run generate-types 2>/dev/null || echo 'Types generation skipped'; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if grep -qE 'SERVICE_ROLE_KEY|API_KEY.*=.*[a-zA-Z0-9]{10}' <<< \"$CLAUDE_TOOL_USE_INPUT\" 2>/dev/null; then echo 'ERROR: API key detected in file content!' >&2; exit 2; fi || true"
+          }
+        ]
+      }
+    ]
+  }
+}
