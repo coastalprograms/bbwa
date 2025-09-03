@@ -10,14 +10,14 @@ interface WeatherData {
   icon: string
 }
 
-export default function PerthWeatherWidget() {
+export default function DunsboroughWeatherWidget() {
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [showWeather, setShowWeather] = useState(false)
 
   useEffect(() => {
-    // Mock weather data for Perth - in real app would use weather API
+    // Mock weather data for Dunsborough - in real app would use weather API
     const mockWeather: WeatherData = {
-      temperature: Math.floor(Math.random() * 15) + 15, // 15-30°C typical Perth range
+      temperature: Math.floor(Math.random() * 10) + 18, // 18-28°C typical Dunsborough coastal range
       condition: ['sunny', 'partly-cloudy', 'cloudy', 'rainy'][Math.floor(Math.random() * 4)] as WeatherData['condition'],
       icon: '☀️'
     }
@@ -48,11 +48,11 @@ export default function PerthWeatherWidget() {
 
   const getWeatherMessage = () => {
     if (weather.temperature > 25) {
-      return "Perfect building weather in Perth!"
+      return "Perfect coastal building weather!"
     } else if (weather.condition === 'rainy') {
       return "Great time for indoor renovations!"
     } else {
-      return "Ideal conditions for construction work!"
+      return "Ideal conditions for coastal construction!"
     }
   }
 
@@ -65,7 +65,7 @@ export default function PerthWeatherWidget() {
       >
         {getWeatherIcon()}
         <ThermometerIcon className="h-3 w-3 ml-1 mr-1" />
-        <span className="font-medium">{weather.temperature}°C Perth</span>
+        <span className="font-medium">{weather.temperature}°C Dunsborough</span>
       </Badge>
     </div>
   )

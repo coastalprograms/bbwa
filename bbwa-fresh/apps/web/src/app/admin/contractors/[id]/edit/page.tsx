@@ -36,8 +36,8 @@ export default async function EditContractorPage({ params }: EditContractorPageP
   }
 
   const breadcrumbItems = [
-    { label: 'Admin', href: '/admin' },
-    { label: 'Contractors', href: '/admin/contractors' },
+    { label: 'Admin', href: '/admin' as const },
+    { label: 'Contractors', href: '/admin/contractors' as const },
     { label: contractor.name }
   ]
 

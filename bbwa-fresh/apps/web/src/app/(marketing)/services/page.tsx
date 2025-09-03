@@ -20,12 +20,12 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: 'Construction Services Perth - New Homes, Renovations & Extensions',
-  description: 'Complete construction services in Perth, WA. New home construction, renovations, extensions, commercial projects & maintenance. Licensed builders with 20+ years experience.',
-  keywords: ['construction services Perth', 'new home construction Perth', 'home renovations Perth', 'extensions Perth', 'commercial construction Perth', 'maintenance repairs Perth', 'project management construction'],
+  title: 'Construction Services Dunsborough - New Homes, Renovations & Extensions',
+  description: 'Complete construction services in Dunsborough, WA. New home construction, renovations, extensions, commercial projects & maintenance. Licensed builders with 20+ years experience.',
+  keywords: ['construction services Dunsborough', 'new home construction South West', 'home renovations Dunsborough', 'extensions Dunsborough', 'commercial construction South West', 'maintenance repairs Dunsborough', 'project management construction'],
   openGraph: {
-    title: 'Construction Services Perth - Bayside Builders WA',
-    description: 'Professional construction services across Perth. New homes, renovations, extensions & commercial projects by licensed builders.',
+    title: 'Construction Services Dunsborough - Bayside Builders WA',
+    description: 'Professional construction services across the South West. New homes, renovations, extensions & commercial projects by licensed builders.',
     images: [
       {
         url: '/images/og-services.jpg',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Construction Services Perth - Bayside Builders WA',
+    title: 'Construction Services Dunsborough - Bayside Builders WA',
     description: 'Professional construction services in Perth. New homes, renovations, extensions & more.',
     images: ['/images/twitter-services.jpg'],
   },

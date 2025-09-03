@@ -140,8 +140,12 @@ export default async function JobSitesPage() {
                   
                   {/* Coordinates */}
                   <div className="text-xs text-gray-500 space-y-1">
-                    <div>Lat: {site.lat.toFixed(6)}</div>
-                    <div>Lng: {site.lng.toFixed(6)}</div>
+                    {site.lat && site.lng && (
+                      <>
+                        <div>Lat: {site.lat.toFixed(6)}</div>
+                        <div>Lng: {site.lng.toFixed(6)}</div>
+                      </>
+                    )}
                     <div>Check-in radius: {site.radius_m || 500}m</div>
                   </div>
 

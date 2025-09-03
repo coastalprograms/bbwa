@@ -20,7 +20,12 @@ const mockSupabaseClient = {
 describe('submitContactForm', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-    mockCreateClient.mockResolvedValue(mockSupabaseClient as any)
+    mockCreateClient.mockReturnValue(mockSupabaseClient as any)
+    mockSupabaseClient.insert.mockResolvedValue({ error: null })
+  })
+  
+  afterEach(() => {
+    jest.resetModules()
   })
 
   const validFormData = {
@@ -120,50 +125,55 @@ describe('submitContactForm', () => {
   })
 
   it('implements rate limiting', async () => {
-    // Mock headers to use a specific IP for this test
-    const mockHeaders = {
-      get: jest.fn().mockReturnValue('192.168.1.100') // Unique IP for rate limiting test
-    }
-    jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
-    
-    // Re-import the function to get fresh module with new IP
-    const { submitContactForm: testSubmitContactForm } = await import('./contact')
-    
-    // Mock console.error to avoid noise in test output
-    const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
-    
-    // First 3 requests should succeed
-    for (let i = 0; i < 3; i++) {
-      const result = await testSubmitContactForm(validFormData)
-      expect(result.success).toBe(true)
-    }
-    
-    // 4th request should be rate limited
-    const rateLimitedResult = await testSubmitContactForm(validFormData)
-    expect(rateLimitedResult.success).toBe(false)
-    expect(rateLimitedResult.error).toBe('Too many requests. Please wait a minute before trying again.')
-    
-    consoleSpy.mockRestore()
+    // Use isolateModules to get fresh state for this test
+    await jest.isolateModulesAsync(async () => {
+      // Mock headers to use a specific IP for this test
+      const mockHeaders = {
+        get: jest.fn().mockReturnValue('192.168.1.100') // Unique IP for rate limiting test
+      }
+      jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
+      
+      // Re-import the function to get fresh module with new IP
+      const { submitContactForm: testSubmitContactForm } = await import('./contact')
+      
+      // Mock console.error to avoid noise in test output
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
+      
+      // First 3 requests should succeed
+      for (let i = 0; i < 3; i++) {
+        const result = await testSubmitContactForm(validFormData)
+        expect(result.success).toBe(true)
+      }
+      
+      // 4th request should be rate limited
+      const rateLimitedResult = await testSubmitContactForm(validFormData)
+      expect(rateLimitedResult.success).toBe(false)
+      expect(rateLimitedResult.error).toBe('Too many requests. Please wait a minute before trying again.')
+      
+      consoleSpy.mockRestore()
+    })
   })
 
   it('handles Supabase errors', async () => {
-    // Use unique IP to avoid rate limiting from other tests
-    const mockHeaders = {
-      get: jest.fn().mockReturnValue('192.168.1.101')
-    }
-    jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
-    
-    const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
-    mockSupabaseClient.insert.mockResolvedValue({ error: { message: 'Database error' } })
-    
-    const { submitContactForm: testSubmitContactForm } = await import('./contact')
-    const result = await testSubmitContactForm(validFormData)
-    
-    expect(result.success).toBe(false)
-    expect(result.error).toBe('Failed to submit form. Please try again.')
-    expect(consoleSpy).toHaveBeenCalledWith('Supabase error:', { message: 'Database error' })
-    
-    consoleSpy.mockRestore()
+    await jest.isolateModulesAsync(async () => {
+      // Use unique IP to avoid rate limiting from other tests
+      const mockHeaders = {
+        get: jest.fn().mockReturnValue('192.168.1.101')
+      }
+      jest.doMock('next/headers', () => ({ headers: () => mockHeaders }))
+      
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
+      mockSupabaseClient.insert.mockResolvedValue({ error: { message: 'Database error' } })
+      
+      const { submitContactForm: testSubmitContactForm } = await import('./contact')
+      const result = await testSubmitContactForm(validFormData)
+      
+      expect(result.success).toBe(false)
+      expect(result.error).toBe('Failed to submit form. Please try again.')
+      expect(consoleSpy).toHaveBeenCalledWith('Supabase error:', { message: 'Database error' })
+      
+      consoleSpy.mockRestore()
+    })
   })
 
   it('handles unexpected errors', async () => {

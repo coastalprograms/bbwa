@@ -19,9 +19,9 @@ export default async function NewContractorPage() {
   }
 
   const breadcrumbItems = [
-    { label: 'Admin', href: '/admin' },
-    { label: 'Contractors', href: '/admin/contractors' },
-    { label: 'Add Contractor', href: '/admin/contractors/new' }
+    { label: 'Admin', href: '/admin' as const },
+    { label: 'Contractors', href: '/admin/contractors' as const },
+    { label: 'Add Contractor' }
   ]
 
   return (

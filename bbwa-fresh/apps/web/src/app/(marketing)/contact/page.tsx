@@ -19,12 +19,12 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Free Construction Quote Perth | Bayside Builders WA',
-  description: 'Contact Perth\'s trusted builders for a free quote. Call (08) 9000 1234 or send a message. Licensed builders ready to discuss your construction, renovation, or extension project.',
-  keywords: ['contact Perth builders', 'free quote construction Perth', 'Perth builders phone', 'construction quote Western Australia', 'licensed builders contact', 'renovation quote Perth'],
+  title: 'Contact Us - Free Construction Quote Dunsborough | Bayside Builders WA',
+  description: 'Contact the South West\'s trusted builders for a free quote. Call (08) 9000 1234 or send a message. Licensed builders ready to discuss your construction, renovation, or extension project.',
+  keywords: ['contact Dunsborough builders', 'free quote construction South West', 'Dunsborough builders phone', 'construction quote Western Australia', 'licensed builders contact', 'renovation quote South West'],
   openGraph: {
-    title: 'Contact Bayside Builders WA - Free Construction Quote Perth',
-    description: 'Get a free quote from Perth\'s trusted builders. Licensed professionals ready to discuss your construction project.',
+    title: 'Contact Bayside Builders WA - Free Construction Quote Dunsborough',
+    description: 'Get a free quote from the South West\'s trusted builders. Licensed professionals ready to discuss your construction project.',
     images: [
       {
         url: '/images/og-contact.jpg',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Bayside Builders WA - Free Construction Quote Perth',
-    description: 'Get a free quote from Perth\'s licensed builders. Call or message us today!',
+    title: 'Contact Bayside Builders WA - Free Construction Quote Dunsborough',
+    description: 'Get a free quote from the South West\'s licensed builders. Call or message us today!',
     images: ['/images/twitter-contact.jpg'],
   },
 }
@@ -49,7 +49,7 @@ export default function ContactPage() {
       <HeroSection
         title="Get In Touch"
         subtitle="Ready to Start Your Project?"
-        description="Contact Perth's trusted construction professionals for a free consultation and quote. We're here to help bring your vision to life."
+        description="Contact the South West's trusted construction professionals for a free consultation and quote. We're here to help bring your vision to life."
         badge="Free Consultation & Quote"
         primaryCta={{
           text: "Call Now",
@@ -103,7 +103,7 @@ export default function ContactPage() {
                       <div className="p-2 rounded-lg bg-muted">
                         <MapPinIcon className="h-4 w-4 text-muted-foreground" />
                       </div>
-                      <span>Perth, WA 6000</span>
+                      <span>Dunsborough, WA 6281</span>
                     </div>
                   </CardContent>
                 </Card>

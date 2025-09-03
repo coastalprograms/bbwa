@@ -44,10 +44,10 @@ export interface ContractorWithWorkerCount extends Contractor {
 
 export interface ContractorFormData {
   name: string
-  abn: string
-  contact_email: string
-  contact_phone: string
-  address: string
+  abn?: string
+  contact_email?: string
+  contact_phone?: string
+  address?: string
   active: boolean
 }
 

@@ -18,7 +18,7 @@ import {
 import Link from 'next/link'
 import { useInView } from '@/lib/animation-utils'
 import AnimatedCounter from './AnimatedCounter'
-import PerthWeatherWidget from './PerthWeatherWidget'
+import DunsboroughWeatherWidget from './DunsboroughWeatherWidget'
 import FloatingSparkles from './FloatingSparkles'
 import ConstructionCursor from './ConstructionCursor'
 
@@ -101,7 +101,7 @@ export default function EnhancedHero({ onScrollToNext }: EnhancedHeroProps) {
         <div className="mx-auto max-w-5xl text-center text-white">
           {/* Weather Widget */}
           <div className="flex justify-center mb-6">
-            <PerthWeatherWidget />
+            <DunsboroughWeatherWidget />
           </div>
           
           {/* Enhanced Trust Badges with Animations */}

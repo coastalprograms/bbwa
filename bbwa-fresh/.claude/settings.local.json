@@ -99,7 +99,12 @@
       "mcp__supabase__apply_migration",
       "mcp__supabase__execute_sql",
       "mcp__supabase__generate_typescript_types",
-      "mcp__serena__think_about_task_adherence"
+      "mcp__serena__think_about_task_adherence",
+      "Bash(for f in migrations/20250903000000_create_contractors_table.sql migrations/20250903000001_add_contractor_fk_to_workers.sql migrations/20250903000002_migrate_company_data_to_contractors.sql)",
+      "Bash(do echo \"=== Checking $f ===\")",
+      "Bash(head:*)",
+      "Bash(done)",
+      "mcp__supabase__list_migrations"
     ],
     "deny": [],
     "ask": []

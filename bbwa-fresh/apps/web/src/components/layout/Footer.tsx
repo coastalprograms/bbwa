@@ -95,7 +95,7 @@ export function Footer() {
               </a>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPinIcon className="h-4 w-4" />
-                Perth, WA 6000
+                Dunsborough, WA 6281
               </div>
             </div>
           </div>

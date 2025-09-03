@@ -30,8 +30,8 @@ export default async function ContractorsPage() {
   const contractors = contractorsResult.data || []
 
   const breadcrumbItems = [
-    { label: 'Admin', href: '/admin' },
-    { label: 'Contractors', href: '/admin/contractors' }
+    { label: 'Admin', href: '/admin' as const },
+    { label: 'Contractors' }
   ]
 
   return (

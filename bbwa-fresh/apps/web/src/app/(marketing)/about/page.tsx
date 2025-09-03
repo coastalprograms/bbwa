@@ -5,25 +5,25 @@ import { HammerIcon, UsersIcon, ShieldCheckIcon, AwardIcon } from "lucide-react"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us - Perth&apos;s Trusted Construction Experts',
-  description: 'Learn about Bayside Builders WA, Perth&apos;s family-owned construction company with 20+ years experience. Meet our licensed team and discover our commitment to quality.',
-  keywords: ['about Perth builders', 'construction company Perth', 'licensed builders Perth', 'family owned builders', 'Perth construction team', 'quality builders Western Australia'],
+  title: 'About Us - South West&apos;s Trusted Construction Experts',
+  description: 'Learn about Bayside Builders WA, South West&apos;s family-owned construction company with 20+ years experience. Meet our licensed team and discover our commitment to quality.',
+  keywords: ['about Dunsborough builders', 'construction company South West', 'licensed builders Dunsborough', 'family owned builders', 'South West construction team', 'quality builders Western Australia'],
   openGraph: {
-    title: 'About Bayside Builders WA - Perth&apos;s Construction Experts',
-    description: 'Family-owned construction company serving Perth for 20+ years. Licensed builders committed to quality craftsmanship and customer satisfaction.',
+    title: 'About Bayside Builders WA - South West&apos;s Construction Experts',
+    description: 'Family-owned construction company serving the South West for 20+ years. Licensed builders committed to quality craftsmanship and customer satisfaction.',
     images: [
       {
         url: '/images/og-about.jpg',
         width: 1200,
         height: 630,
-        alt: 'Bayside Builders WA Team - Perth Construction Experts',
+        alt: 'Bayside Builders WA Team - South West Construction Experts',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Bayside Builders WA - Perth Construction Experts',
-    description: 'Family-owned builders serving Perth for 20+ years. Licensed, experienced, and committed to quality.',
+    title: 'About Bayside Builders WA - South West Construction Experts',
+    description: 'Family-owned builders serving the South West for 20+ years. Licensed, experienced, and committed to quality.',
     images: ['/images/twitter-about.jpg'],
   },
 }
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold mb-6">Building Excellence Since 2008</h2>
             <div className="prose max-w-none text-muted-foreground space-y-4">
               <p className="text-lg">
-                Bayside Builders WA was founded with a simple mission: to deliver exceptional construction services that exceed our clients&apos; expectations. What started as a small family business has grown into one of Perth&apos;s most trusted construction companies.
+                Bayside Builders WA was founded with a simple mission: to deliver exceptional construction services that exceed our clients&apos; expectations. What started as a small family business has grown into one of the South West&apos;s most trusted construction companies.
               </p>
               <p>
                 Our journey began when founder John Smith, a licensed builder with a passion for quality craftsmanship, recognized the need for a construction company that truly put customers first. Over the years, we&apos;ve completed hundreds of projects across Western Australia, from custom homes to commercial developments.

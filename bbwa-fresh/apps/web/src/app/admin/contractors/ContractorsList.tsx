@@ -309,11 +309,11 @@ export default function ContractorsList({ contractors, filters }: ContractorsLis
                                 <div className="flex items-center gap-2 mb-1">
                                   <span className="font-medium text-gray-900">{worker.name}</span>
                                   {worker.active ? (
-                                    <Badge size="sm" className="bg-green-100 text-green-800 hover:bg-green-100">
+                                    <Badge className="bg-green-100 text-green-800 hover:bg-green-100 text-xs">
                                       Active
                                     </Badge>
                                   ) : (
-                                    <Badge size="sm" variant="secondary">
+                                    <Badge variant="secondary" className="text-xs">
                                       Inactive
                                     </Badge>
                                   )}

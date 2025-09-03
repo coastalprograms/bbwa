@@ -82,12 +82,12 @@ export default function LandingPage() {
             </Badge>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Perth's Trusted Construction Partners
+              Dunsborough&apos;s Premier Construction Partners
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              15+ years delivering quality construction projects across Perth. From new homes to renovations, 
-              we bring expertise and reliability to every build.
+              15+ years delivering quality construction projects across the South West. From new homes to renovations, 
+              we bring expertise and reliability to every coastal build.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -133,21 +133,21 @@ export default function LandingPage() {
             </Badge>
             
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Building Excellence Across Perth
+              Building Excellence Across Dunsborough & South West
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From Fremantle to Ellenbrook, Scarborough to Rockingham - we deliver quality construction services on time and within budget across all Perth suburbs.
+              From Busselton to Margaret River, Yallingup to Eagle Bay - we deliver quality construction services on time and within budget across all South West communities.
             </p>
           </div>
           
           <div className="bg-muted/30 rounded-xl p-6 mb-12">
             <div className="text-center mb-4">
               <h3 className="text-lg font-semibold mb-2">
-                Proudly Serving Perth Suburbs
+                Proudly Serving South West Communities
               </h3>
               
               <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-                {['Cottesloe', 'Fremantle', 'Scarborough', 'Joondalup', 'Rockingham', 'Ellenbrook', 'Mandurah', '& More'].map((suburb) => (
+                {['Busselton', 'Margaret River', 'Yallingup', 'Eagle Bay', 'Quindalup', 'Vasse', 'Geographe', '& More'].map((suburb) => (
                   <span 
                     key={suburb}
                     className="px-3 py-1 bg-primary/10 text-primary rounded-full"
@@ -176,7 +176,7 @@ export default function LandingPage() {
                   </CardHeader>
                   <CardContent>
                     <Button variant="ghost" className="group-hover:text-primary" asChild>
-                      <Link href={`/services/${service.slug}`}>
+                      <Link href={`/services/${service.slug}` as any}>
                         Learn More
                         <ArrowRightIcon className="ml-2 h-4 w-4" />
                       </Link>
@@ -206,7 +206,7 @@ export default function LandingPage() {
               What Our Customers Say
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We don't do hype. Just real feedback from real businesses we've helped streamline, scale and simplify.
+              We don&apos;t do hype. Just real feedback from real businesses we&apos;ve helped streamline, scale and simplify.
             </p>
           </div>
           
@@ -225,10 +225,10 @@ export default function LandingPage() {
               </div>
               
               <blockquote className="text-lg leading-relaxed mb-8 text-gray-800">
-                "I engaged Bayside Builders to build a website and enhance the online presence of my heavy mechanical business. From the outset, 
+                &quot;I engaged Bayside Builders to build a website and enhance the online presence of my heavy mechanical business. From the outset, 
                 Jake demonstrated a high level of professionalism, technical expertise, and a genuine interest in helping my business grow. He was 
                 prompt, well-organised, and communicative throughout the entire process, making the experience smooth and stress-free. I highly 
-                recommend Bayside Builders to anyone looking for a reliable and cost-effective solution."
+                recommend Bayside Builders to anyone looking for a reliable and cost-effective solution.&quot;
               </blockquote>
               
               <div className="flex items-center gap-4">
@@ -255,10 +255,10 @@ export default function LandingPage() {
             </Badge>
             
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why Perth Trusts Us
+              Why the South West Trusts Us
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Fully licensed, insured, and certified professionals with a proven track record across Perth's construction industry.
+              Fully licensed, insured, and certified professionals with a proven track record across the South West&apos;s construction industry.
             </p>
           </div>
           
@@ -302,13 +302,13 @@ export default function LandingPage() {
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-primary mb-2">500+</div>
                 <div className="text-lg font-semibold mb-1">Projects Completed</div>
-                <div className="text-sm text-muted-foreground">Across Perth & Surrounds</div>
+                <div className="text-sm text-muted-foreground">Across South West & Surrounds</div>
               </div>
               
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-primary mb-2">15+</div>
                 <div className="text-lg font-semibold mb-1">Years Experience</div>
-                <div className="text-sm text-muted-foreground">Perth Construction Industry</div>
+                <div className="text-sm text-muted-foreground">South West Construction Industry</div>
               </div>
               
               <div>
@@ -325,7 +325,7 @@ export default function LandingPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              {['Excellence Award 2023', '5-Star Rated', 'Perth Local Champions', 'On-Time Delivery'].map((achievement) => (
+              {['Excellence Award 2023', '5-Star Rated', 'South West Champions', 'On-Time Delivery'].map((achievement) => (
                 <Badge key={achievement} variant="outline" className="bg-white/50">
                   {achievement}
                 </Badge>
@@ -337,17 +337,17 @@ export default function LandingPage() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Perth Local Expertise
+                  South West Local Expertise
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  As long-term Perth residents and construction professionals, we understand the unique challenges of building in Western Australia's climate and conditions.
+                  As long-term South West residents and construction professionals, we understand the unique challenges of building in coastal Western Australia&apos;s climate and conditions.
                 </p>
                 <div className="space-y-3">
                   {[
                     'Heritage council and council approvals expertise',
-                    'Perth climate-optimized construction methods', 
+                    'Coastal climate-optimized construction methods', 
                     'Local supplier and trade relationships',
-                    'Understanding of Perth soil and foundation requirements'
+                    'Understanding of coastal soil and foundation requirements'
                   ].map((feature) => (
                     <div key={feature} className="flex items-center gap-3">
                       <CheckIcon className="h-5 w-5 text-primary flex-shrink-0" />
@@ -359,10 +359,10 @@ export default function LandingPage() {
               <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-6">
                 <div className="text-center mb-6">
                   <h4 className="text-lg font-semibold mb-2">Our Service Areas</h4>
-                  <p className="text-sm text-muted-foreground">Professional construction services across Perth metropolitan area</p>
+                  <p className="text-sm text-muted-foreground">Professional construction services across South West Western Australia</p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 text-sm">
-                  {['Perth CBD', 'Cottesloe', 'Fremantle', 'Scarborough', 'Joondalup', 'Rockingham', 'Mandurah', 'Ellenbrook', 'Subiaco', '& Surrounding Areas'].map((area) => (
+                  {['Dunsborough', 'Busselton', 'Margaret River', 'Yallingup', 'Eagle Bay', 'Quindalup', 'Vasse', 'Geographe', 'Broadwater', '& Surrounding Areas'].map((area) => (
                     <div key={area} className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
                       <span>{area}</span>
@@ -386,7 +386,7 @@ export default function LandingPage() {
               Built on Strong Values
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our commitment to quality, reliability, and customer satisfaction drives everything we do in Perth.
+              Our commitment to quality, reliability, and customer satisfaction drives everything we do in the South West.
             </p>
           </div>
           
@@ -423,7 +423,7 @@ export default function LandingPage() {
               </h2>
               
               <p className="text-lg mb-8 opacity-95 max-w-3xl mx-auto leading-relaxed">
-                Join 500+ satisfied Perth families and businesses who chose Bayside Builders WA. 
+                Join 500+ satisfied South West families and businesses who chose Bayside Builders WA. 
                 Get your free on-site consultation, detailed quote, and project timeline today.
               </p>
               
@@ -452,7 +452,7 @@ export default function LandingPage() {
                 <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 border-white/30 text-white" asChild>
                   <Link href="/projects">
                     <Building2Icon className="mr-2 h-4 w-4" />
-                    View Perth Projects
+                    View South West Projects
                   </Link>
                 </Button>
               </div>
@@ -470,13 +470,13 @@ export default function LandingPage() {
                 
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span>Servicing All Perth Metro</span>
+                  <span>Servicing All South West WA</span>
                 </div>
               </div>
 
               <div className="mt-8 flex justify-center">
                 <Badge variant="outline" className="bg-white/10 border-white/30 text-white">
-                  Proudly Perth Born & Bred
+                  Proudly South West Born & Bred
                 </Badge>
               </div>
             </CardContent>
