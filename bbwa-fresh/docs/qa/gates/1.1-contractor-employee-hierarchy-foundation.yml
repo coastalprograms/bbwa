@@ -1,0 +1,78 @@
+# Quality Gate Decision for Story 1.1
+schema: 1
+story: "1.1"
+story_title: "Contractor-Employee Hierarchy Foundation"
+gate: FAIL
+status_reason: "Database migrations completed but critical UI components not updated to use contractor relationships - admin interface still queries legacy company field"
+reviewer: "Quinn (Test Architect)"
+updated: "2025-09-03T14:45:00Z"
+
+waiver: { active: false }
+
+top_issues:
+  - id: "UI-001"
+    severity: high
+    finding: "Admin workers page still uses legacy company field instead of contractor relationship"
+    suggested_action: "Update admin/workers/page.tsx to query contractor table and display contractor names"
+  - id: "FORM-001"
+    severity: high
+    finding: "No worker induction/registration form found that uses contractor dropdown"
+    suggested_action: "Create or update worker registration form with contractor dropdown per AC 3"
+  - id: "INTEGRATION-001"
+    severity: medium
+    finding: "Acceptance criteria 3 (contractor dropdown in induction form) appears unimplemented"
+    suggested_action: "Implement contractor dropdown in worker registration/induction form"
+  - id: "TESTING-001"
+    severity: medium
+    finding: "No tests found for new contractor functionality"
+    suggested_action: "Add unit and integration tests per story requirements"
+
+risk_summary:
+  totals: { critical: 0, high: 2, medium: 2, low: 0 }
+  highest: high
+  recommendations:
+    must_fix:
+      - "Update admin UI to use contractor relationships"
+      - "Implement contractor dropdown in worker forms"
+    monitor:
+      - "Add comprehensive test coverage"
+      - "Verify data migration completed successfully"
+
+evidence:
+  tests_reviewed: 0
+  risks_identified: 4
+  trace:
+    ac_covered: [1, 2, 4, 5]  # Database structure, migration, RLS
+    ac_gaps: [3]  # Contractor dropdown in induction form
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: "RLS policies properly implemented following existing patterns"
+  performance:
+    status: PASS
+    notes: "Proper indexes created for contractors and foreign key relationship"
+  reliability:
+    status: CONCERNS
+    notes: "Data migration appears complete but UI inconsistency could cause runtime errors"
+  maintainability:
+    status: CONCERNS
+    notes: "TypeScript types created but UI not updated - creates maintenance burden"
+
+recommendations:
+  immediate:
+    - action: "Update admin workers query to use contractor relationship"
+      refs: ["apps/web/src/app/admin/workers/page.tsx:45-59"]
+    - action: "Replace company display with contractor name in admin table"  
+      refs: ["apps/web/src/app/admin/workers/page.tsx:107, 132"]
+    - action: "Create or update worker registration form with contractor dropdown"
+      refs: ["apps/web/src/app/induction/ (needs implementation)"]
+  future:
+    - action: "Add comprehensive test coverage for contractor functionality"
+      refs: ["__tests__/ directories"]
+    - action: "Remove legacy company column after UI migration complete"
+      refs: ["supabase/migrations/20250903000002_migrate_company_data_to_contractors.sql:39"]
+
+quality_score: 60  # 100 - (20*0 critical) - (20*2 high) - (10*2 medium) = 60
+
+expires: "2025-09-10T14:45:00Z"  # 1 week from review
